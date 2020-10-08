@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+package chat;
+
+message Message{
+string id = 1;
+    string body =2; 
+    bool delivered=3;
+    bool read = 4;
+
+}
+
+service ChatService{
+    rpc SendMessage(Message) returns (Message){}
+    rpc ReadMessage(Message) returns (Message){}
+}
